@@ -2,7 +2,7 @@
 # For example, if A = [1, 2, 3, 4, 5] and B = [0, 1, 3, 7] then you should return [1, 3]
 
 def intersection(arr1,arr2):
-    res = []
+    res = [] # if repeated is there work with set
     for i in arr1:
         if i in arr2:
             res.append(i)
