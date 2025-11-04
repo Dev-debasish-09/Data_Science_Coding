@@ -51,3 +51,20 @@ class UserMainCode(object):
         
         # Try starting with both types and take the maximum
         return max(simulate(0), simulate(1))
+
+
+###################################################
+A = 1
+B = 3
+C = [1, 0, 1]
+D = [1, 1, 2]
+E = [1, 1, 1]
+prev = -1
+count = 0
+for i in range(B):
+    if D[i] <= A and C[i] != prev:
+        A += E[i]
+        prev = C[i]
+        count += 1
+
+print(count)
