@@ -12,19 +12,20 @@
 class Solution:
     def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
         nums = []
+        # create the array from the linklist 
 
         while head:
             nums.append(head.val)
             head = head.next
-        
+        # building a tree 
         def build(left,right):
             if left > right:
                 return None
-            
+            # mid will be the heading node or root node
             mid = (left + right) // 2
-
+            # assign the root node
             root = TreeNode(nums[mid])
-
+            # root left we directly do this because once we get the root node rest are recursively happen
             root.left = build(left,mid-1)
             root.right = build(mid+1,right)
 
